@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #2EC2A0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    background-color: #eb3b5a;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 3px;
+    width: 100%;
+    text-align: center;
+}
+.container{
+    margin-top: 2rem;
+display: grid;
+grid-template-columns: repeat(3,auto);
+}
+.box{
+    width: 100px;
+    height: 100px;
+    border-right: 5px solid rgb(255, 255, 255);
+    border-bottom: 5px solid rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.box:nth-child(3){
+    border-right: none;
+}
+.box:nth-child(9){
+    border-right: none;
+}
+.box:nth-child(6){
+    border-right: none;
+}
+.box:nth-child(7),
+.box:nth-child(8),
+.box:nth-child(9)
+{
+    border-bottom: none;
+}
+.status{
+    margin: 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+
+}
+#restart{
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    background-color: #e74c3c ;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+#restart:hover{
+background-color: #8e44ad;
+transform: scale(1.1);
+}
+
+.win{
+animation: winAnimation  ease-in-out 1s infinite;
+}
+
+@keyframes winAnimation {
+    0%{
+        background-color: #fed330;
+    }
+    100%{
+        background-color: #ffffff;
+    }
+}
+
+.status.active{
+    animation: big ease-in-out 1s infinite;
+}
+@keyframes big {
+    0%{
+        transform: scale(1);
+    }
+    40%{
+        transform: scale(1.2);
+    }
+    80%{
+        transform: scale(1.4);
+    }
+    100%{
+        transform: scale(1.5);
+    }
+}
+
+@media (max-width:576px) {
+    @keyframes big {
+        0%{
+            transform: scale(1);
+        }
+        40%{
+            transform: scale(1.1);
+        }
+        100%{
+            transform: scale(1.2);
+        }
+    }
+
+}
